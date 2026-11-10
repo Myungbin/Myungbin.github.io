@@ -5,231 +5,258 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Myungbin Gwak | Personal Homepage</title>
   <meta name="description" content="MS Student in Artificial Intelligence at Chung-Ang University" />
+  <meta name="color-scheme" content="light dark" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
   <!-- ─── Navigation ─── -->
   <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <!-- <li><a href="cv.pdf" target="_blank">CV</a></li> -->
-    </ul>
+    <div class="nav-inner">
+      <a class="brand" href="#about">Myungbin Gwak</a>
+      <ul>
+        <li><a href="#news">News</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <!-- <li><a href="cv.pdf" target="_blank">CV</a></li> -->
+      </ul>
+    </div>
   </nav>
 
-  <div class="container">
+  <main>
 
-    <!-- ─── About ─── -->
-    <section id="about">
-      <div class="profile">
-        <div class="photo">
+    <!-- ─── About (Hero) ─── -->
+    <section id="about" class="hero">
+      <div class="container">
+        <div class="photo reveal">
           <img src="profile.jpg" alt="Myungbin Gwak" />
         </div>
-        <div class="info">
-          <h1>Myungbin Gwak</h1>
-          <p class="position">M.S. Student</p>
-          <p class="affiliation">
-            Department of Artificial Intelligence<br />
-            Chung-Ang University, Seoul, Korea<br />
-            Data Science Lab &nbsp;|&nbsp; Advisor: Prof. Yoon-Sik Cho
-          </p>
-          <div class="links">
-            <a href="mailto:mbgwak1103@gmail.com">Email</a>
-            <a href="https://github.com/Myungbin" target="_blank">GitHub</a>
-            <!-- ✏️ Google Scholar 계정이 있으면 아래 링크를 활성화하세요 -->
-            <!-- <a href="https://scholar.google.com/citations?user=[your-id]" target="_blank">Google Scholar</a> -->
-            <!-- <a href="cv.pdf" target="_blank">CV</a> -->
-          </div>
+        <p class="eyebrow reveal">M.S. Student · Artificial Intelligence</p>
+        <h1 class="reveal">Myungbin Gwak</h1>
+        <p class="tagline reveal">
+          Building recommender systems that understand<br class="br-wide" />
+          what people actually want.
+        </p>
+        <p class="affiliation reveal">
+          Data Science Lab, Chung-Ang University, Seoul<br />
+          Advisor: Prof. Yoon-Sik Cho
+        </p>
+        <div class="links reveal">
+          <a class="btn btn-primary" href="mailto:mbgwak1103@gmail.com">Email</a>
+          <a class="btn btn-secondary" href="https://github.com/Myungbin" target="_blank">GitHub</a>
+          <!-- ✏️ Google Scholar 계정이 있으면 아래 링크를 활성화하세요 -->
+          <!-- <a class="btn btn-secondary" href="https://scholar.google.com/citations?user=[your-id]" target="_blank">Google Scholar</a> -->
+          <!-- <a class="btn btn-secondary" href="cv.pdf" target="_blank">CV</a> -->
         </div>
-      </div>
 
-      <p class="bio">
-        I am an M.S. student in the Department of Artificial Intelligence at
-        <a href="https://www.cau.ac.kr" target="_blank">Chung-Ang University</a>,
-        working in the Data Science Lab.
-        My research focuses on <strong>recommender systems</strong>, with particular interest in
-        improving the accuracy and diversity of personalized recommendations using deep learning
-        and graph-based methods.
-        <!-- ✏️ 연구 내용을 구체적으로 수정하세요 -->
-      </p>
+        <p class="bio reveal">
+          I am an M.S. student in the Department of Artificial Intelligence at
+          <a href="https://www.cau.ac.kr" target="_blank">Chung-Ang University</a>,
+          working in the Data Science Lab.
+          My research focuses on <strong>recommender systems</strong>, with particular interest in
+          improving the accuracy and diversity of personalized recommendations using deep learning
+          and graph-based methods.
+          <!-- ✏️ 연구 내용을 구체적으로 수정하세요 -->
+        </p>
+      </div>
     </section>
 
     <!-- ─── News ─── -->
-    <section id="news">
-      <h2>News</h2>
-      <ul class="news-list">
-        <!-- ✏️ 날짜와 내용을 수정/추가하세요 -->
-        <li>
-          <span class="date">2026. 11.</span>
-          <span>Paper accepted at WSDM 2027: <em>Supervised Contrastive Learning with Modality-Guided Positive Pairs for Multimodal Recommendation</em>.</span>
-        </li>
-        <li>
-          <span class="date">2025. 11.</span>
-          <span>Won the Grand Prize (Dean of College of Medicine Award) at the 2025 Chung-Ang University Medical AI Hackathon.</span>
-        </li>
-        <li>
-          <span class="date">2025. 03.</span>
-          <span>Started M.S. program at Chung-Ang University.</span>
-        </li>
-      </ul>
+    <section id="news" class="tinted">
+      <div class="container">
+        <h2 class="reveal">News</h2>
+        <ul class="group-list reveal">
+          <!-- ✏️ 날짜와 내용을 수정/추가하세요 -->
+          <li>
+            <span class="date">Nov 2026</span>
+            <span>Paper accepted at <strong>WSDM 2027</strong>: <em>Supervised Contrastive Learning with Modality-Guided Positive Pairs for Multimodal Recommendation</em>.</span>
+          </li>
+          <li>
+            <span class="date">Nov 2025</span>
+            <span>Won the Grand Prize (Dean of College of Medicine Award) at the 2025 Chung-Ang University Medical AI Hackathon.</span>
+          </li>
+          <li>
+            <span class="date">Mar 2025</span>
+            <span>Started M.S. program at Chung-Ang University.</span>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- ─── Publications ─── -->
     <section id="publications">
-      <h2>Publications</h2>
+      <div class="container">
+        <h2 class="reveal">Publications</h2>
 
-      <h3 style="font-size:15px; color:#666; font-family:sans-serif; font-weight:normal; margin:16px 0;">
-        Conference Papers
-      </h3>
-      <ul class="pub-list">
-        <li class="pub-item">
-          <div class="title">
-            Supervised Contrastive Learning with Modality-Guided Positive Pairs for Multimodal Recommendation
-          </div>
-          <div class="authors">
-            <span class="me">Myungbin Gwak</span>, YeoJun Choi, and Yoon-Sik Cho
-          </div>
-          <div class="venue">
-            <span class="venue-name">WSDM 2027</span>
-          </div>
-        </li>
-        <li class="pub-item">
-          <div class="title">
-            Relational Alignment Graph Neural Network for Multimodal Recommendation
-          </div>
-          <div class="authors">
-            Woo-Seong Yun, <span class="me">Myungbin Gwak</span>, Eunsun Kim, and Yoon-Sik Cho
-          </div>
-          <div class="venue">
-            <span class="venue-name">IEIE 2025</span> — Special Session on Advanced Artificial Intelligence and Data Science,
-            The Institute of Electronics and Information Engineers
-          </div>
-        </li>
-      </ul>
+        <h3 class="subhead reveal">Conference Papers</h3>
+        <ul class="card-list">
+          <li class="card pub-item reveal">
+            <div class="venue-tag accent">WSDM 2027</div>
+            <div class="title">
+              Supervised Contrastive Learning with Modality-Guided Positive Pairs for Multimodal Recommendation
+            </div>
+            <div class="authors">
+              <span class="me">Myungbin Gwak</span>, YeoJun Choi, and Yoon-Sik Cho
+            </div>
+          </li>
+          <li class="card pub-item reveal">
+            <div class="venue-tag">IEIE 2025</div>
+            <div class="title">
+              Relational Alignment Graph Neural Network for Multimodal Recommendation
+            </div>
+            <div class="authors">
+              Woo-Seong Yun, <span class="me">Myungbin Gwak</span>, Eunsun Kim, and Yoon-Sik Cho
+            </div>
+            <div class="venue">
+              Special Session on Advanced Artificial Intelligence and Data Science,
+              The Institute of Electronics and Information Engineers
+            </div>
+          </li>
+        </ul>
 
-      <h3 style="font-size:15px; color:#666; font-family:sans-serif; font-weight:normal; margin:24px 0 16px;">
-        Preprints
-      </h3>
-      <p style="font-size:13px; color:#aaa; font-family:sans-serif; margin-bottom:12px;">* equal contribution</p>
-      <ul class="pub-list">
-        <li class="pub-item">
-          <div class="title">
-            SIFT: Selective Modality Fusion with Adaptive Allocation for Multimodal Recommendation
-          </div>
-          <div class="authors">
-            <span class="me">Myungbin Gwak</span>, YeoJun Choi, and Yoon-Sik Cho
-          </div>
-          <div class="venue">Under Review</div>
-        </li>
-        <li class="pub-item">
-          <div class="title">
-            LINKER: Leveraging Modality Knowledge for Semantic Relation Generation in Multimodal Recommendation
-          </div>
-          <div class="authors">
-            <span class="me">Myungbin Gwak</span>*, Woo-Seong Yun*, and Yoon-Sik Cho
-          </div>
-          <div class="venue">ACM Transactions on Intelligent Systems and Technology (Under Review)</div>
-        </li>
-        <li class="pub-item">
-          <div class="title">
-            Are GCNs Really Necessary for Recommendation?: How Degree Beats GCN
-          </div>
-          <div class="authors">
-            YeoJun Choi, Chanwoo Jeong, <span class="me">Myungbin Gwak</span>, and Yoon-Sik Cho
-          </div>
-          <div class="venue">Pre-submission</div>
-        </li>
-      </ul>
+        <h3 class="subhead reveal">Preprints <span class="note">* equal contribution</span></h3>
+        <ul class="card-list">
+          <li class="card pub-item reveal">
+            <div class="venue-tag muted">Under Review</div>
+            <div class="title">
+              SIFT: Selective Modality Fusion with Adaptive Allocation for Multimodal Recommendation
+            </div>
+            <div class="authors">
+              <span class="me">Myungbin Gwak</span>, YeoJun Choi, and Yoon-Sik Cho
+            </div>
+          </li>
+          <li class="card pub-item reveal">
+            <div class="venue-tag muted">Under Review</div>
+            <div class="title">
+              LINKER: Leveraging Modality Knowledge for Semantic Relation Generation in Multimodal Recommendation
+            </div>
+            <div class="authors">
+              <span class="me">Myungbin Gwak</span>*, Woo-Seong Yun*, and Yoon-Sik Cho
+            </div>
+            <div class="venue">ACM Transactions on Intelligent Systems and Technology</div>
+          </li>
+          <li class="card pub-item reveal">
+            <div class="venue-tag muted">Pre-submission</div>
+            <div class="title">
+              Are GCNs Really Necessary for Recommendation?: How Degree Beats GCN
+            </div>
+            <div class="authors">
+              YeoJun Choi, Chanwoo Jeong, <span class="me">Myungbin Gwak</span>, and Yoon-Sik Cho
+            </div>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- ─── Experience ─── -->
-    <section id="experience">
-      <h2>Experience &amp; Education</h2>
-      <ul class="exp-list">
+    <section id="experience" class="tinted">
+      <div class="container">
+        <h2 class="reveal">Experience &amp; Education</h2>
+        <ul class="group-list exp-list reveal">
 
-        <li class="exp-item">
-          <span class="period">2025 – Present</span>
-          <div class="detail">
-            <div class="role">M.S. Student</div>
-            <div class="org">Dept. of Artificial Intelligence, Chung-Ang University</div>
-            <div class="desc">Advisor: Prof. Yoon-Sik Cho &nbsp;/&nbsp; Research on Recommender Systems</div>
-          </div>
-        </li>
+          <li>
+            <span class="date">2025 – Present</span>
+            <div class="detail">
+              <div class="role">M.S. Student</div>
+              <div class="org">Dept. of Artificial Intelligence, Chung-Ang University</div>
+              <div class="desc">Advisor: Prof. Yoon-Sik Cho · Research on Recommender Systems</div>
+            </div>
+          </li>
 
-        <li class="exp-item">
-          <span class="period">2023 – 2024</span>
-          <div class="detail">
-            <div class="role">AI Research Engineer</div>
-            <div class="org">CYWELL</div>
-            <div class="desc">Developed OCR and LLM-based services to automate document processing workflows.</div>
-          </div>
-        </li>
+          <li>
+            <span class="date">2023 – 2024</span>
+            <div class="detail">
+              <div class="role">AI Research Engineer</div>
+              <div class="org">CYWELL</div>
+              <div class="desc">Developed OCR and LLM-based services to automate document processing workflows.</div>
+            </div>
+          </li>
 
-        <li class="exp-item">
-          <span class="period">2022 – 2023</span>
-          <div class="detail">
-            <div class="role">AI Research Engineer</div>
-            <div class="org">NPCore</div>
-            <div class="desc">Researched and developed deep learning-based models for novel malware detection and classification.</div>
-          </div>
-        </li>
+          <li>
+            <span class="date">2022 – 2023</span>
+            <div class="detail">
+              <div class="role">AI Research Engineer</div>
+              <div class="org">NPCore</div>
+              <div class="desc">Researched and developed deep learning-based models for novel malware detection and classification.</div>
+            </div>
+          </li>
 
-      </ul>
+        </ul>
+      </div>
     </section>
 
     <!-- ─── Projects ─── -->
     <section id="projects">
-      <h2>Projects</h2>
-      <ul class="project-list">
+      <div class="container">
+        <h2 class="reveal">Projects</h2>
+        <ul class="project-grid">
 
-        <li class="project-item">
-          <div class="title">
-            <a href="https://github.com/Myungbin/SNUH-Pathology_Medical_Image_AI_Challenge" target="_blank">SNUH Pathology Medical Image AI Challenge</a>
-            <span style="margin-left:8px; font-size:12px; background:#fef3cd; color:#856404; padding:2px 8px; border-radius:10px; font-family:sans-serif;">🏆 1st Place</span>
-          </div>
-          <div class="desc">
-            Predicted melanoma recurrence using pathology images and clinical data, hosted by Seoul National University Hospital.
-            Evaluated by AUROC and AUPRC metrics.
-          </div>
-          <div class="tags">
-            <span>Python</span>
-            <span>PyTorch</span>
-            <span>Medical Imaging</span>
-            <span>Computer Vision</span>
-          </div>
-        </li>
+          <li class="card project-item reveal">
+            <span class="badge">1st Place</span>
+            <div class="title">SNUH Pathology Medical Image AI Challenge</div>
+            <div class="desc">
+              Predicted melanoma recurrence using pathology images and clinical data, hosted by Seoul National University Hospital.
+              Evaluated by AUROC and AUPRC metrics.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Medical Imaging</span>
+              <span>Computer Vision</span>
+            </div>
+            <a class="more" href="https://github.com/Myungbin/SNUH-Pathology_Medical_Image_AI_Challenge" target="_blank">View on GitHub</a>
+          </li>
 
-        <li class="project-item">
-          <div class="title">
-            <a href="https://github.com/Myungbin/Synthetic-Data-Object-Detection" target="_blank">Synthetic Data-Based Object Detection</a>
-            <span style="margin-left:8px; font-size:12px; background:#fef3cd; color:#856404; padding:2px 8px; border-radius:10px; font-family:sans-serif;">🏆 1st Place</span>
-          </div>
-          <div class="desc">
-            Vehicle detection using synthetically generated data to reduce labeling cost and improve model accuracy.
-          </div>
-          <div class="tags">
-            <span>Python</span>
-            <span>MMDetection</span>
-            <span>Object Detection</span>
-            <span>PyTorch</span>
-          </div>
-        </li>
+          <li class="card project-item reveal">
+            <span class="badge">1st Place</span>
+            <div class="title">Synthetic Data-Based Object Detection</div>
+            <div class="desc">
+              Vehicle detection using synthetically generated data to reduce labeling cost and improve model accuracy.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>MMDetection</span>
+              <span>Object Detection</span>
+              <span>PyTorch</span>
+            </div>
+            <a class="more" href="https://github.com/Myungbin/Synthetic-Data-Object-Detection" target="_blank">View on GitHub</a>
+          </li>
 
-      </ul>
+        </ul>
+      </div>
     </section>
 
-  </div>
+  </main>
 
   <footer>
-    <p>Last updated: November 2026 &nbsp;|&nbsp; Built with plain HTML &amp; CSS</p>
+    <div class="container">
+      <p>Last updated: November 2026</p>
+      <p>Copyright © 2026 Myungbin Gwak. Built with plain HTML &amp; CSS.</p>
+    </div>
   </footer>
+
+  <script>
+    // Gentle fade-up on scroll (Apple-style). Content stays visible if JS or the observer is unavailable.
+    (function () {
+      var items = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window) ||
+          window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 
 </body>
 </html>
