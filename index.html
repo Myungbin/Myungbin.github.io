@@ -10,8 +10,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- ✏️ style.css를 수정하면 ?v= 숫자를 올려주세요 (브라우저 캐시 갱신용) -->
-  <link rel="stylesheet" href="style.css?v=2" />
-  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="style.css?v=3" />
+  <script>
+    // Apply the saved (or system) theme before first paint to avoid a flash.
+    (function () {
+      var d = document.documentElement, t = null;
+      d.classList.add('js');
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      d.setAttribute('data-theme', t);
+    })();
+  </script>
 </head>
 <body>
 
@@ -26,6 +37,22 @@
         <li><a href="#projects">Projects</a></li>
         <!-- <li><a href="cv.pdf" target="_blank">CV</a></li> -->
       </ul>
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <!-- moon: shown in light mode -->
+        <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <path fill="currentColor" d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+        </svg>
+        <!-- sun: shown in dark mode -->
+        <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
+            <line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/>
+            <line x1="4.6" y1="4.6" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.4" y2="19.4"/>
+            <line x1="4.6" y1="19.4" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.4" y2="4.6"/>
+          </g>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -242,6 +269,23 @@
   </footer>
 
   <script>
+    // Dark / light toggle. A manual choice is remembered; otherwise follow the system setting.
+    (function () {
+      var d = document.documentElement;
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function saved() { try { return localStorage.getItem('theme'); } catch (e) { return null; } }
+      document.querySelector('.theme-toggle').addEventListener('click', function () {
+        var next = d.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        d.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+      var onSystemChange = function (e) {
+        if (!saved()) d.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      };
+      if (mq.addEventListener) mq.addEventListener('change', onSystemChange);
+      else if (mq.addListener) mq.addListener(onSystemChange);
+    })();
+
     // Gentle fade-up on scroll (Apple-style). Content stays visible if JS or the observer is unavailable.
     (function () {
       var items = document.querySelectorAll('.reveal');
