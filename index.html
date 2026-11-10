@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <!-- ✏️ style.css를 수정하면 ?v= 숫자를 올려주세요 (브라우저 캐시 갱신용) -->
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
   <script>
     // Apply the saved (or system) theme before first paint to avoid a flash.
     (function () {
@@ -71,7 +71,7 @@
           what people actually want.
         </p>
         <p class="affiliation reveal">
-          Data Science Lab, Chung-Ang University, Seoul<br />
+          <a href="https://sites.google.com/aicampus.cau.ac.kr/dsl" target="_blank">Data Science Lab</a>, Chung-Ang University, Seoul<br />
           Advisor: Prof. Yoon-Sik Cho
         </p>
         <div class="links reveal">
@@ -85,7 +85,7 @@
         <p class="bio reveal">
           I am an M.S. student in the Department of Artificial Intelligence at
           <a href="https://www.cau.ac.kr" target="_blank">Chung-Ang University</a>,
-          working in the Data Science Lab.
+          working in the <a href="https://sites.google.com/aicampus.cau.ac.kr/dsl" target="_blank">Data Science Lab</a>.
           My research focuses on <strong>recommender systems</strong>, with particular interest in
           improving the accuracy and diversity of personalized recommendations using deep learning
           and graph-based methods.
@@ -222,20 +222,22 @@
     <section id="projects">
       <div class="container">
         <h2 class="reveal">Projects</h2>
-        <ul class="project-grid">
+        <!-- ✏️ 프로젝트를 추가하려면 아래 <li class="card project-item reveal"> 블록을 복사해서 붙여넣으세요 -->
+        <div class="carousel">
+        <ul class="carousel-track" tabindex="0" aria-label="Projects (scroll sideways)">
 
           <li class="card project-item reveal">
             <span class="badge">1st Place</span>
             <div class="title">SNUH Pathology Medical Image AI Challenge</div>
             <div class="desc">
-              Predicted melanoma recurrence using pathology images and clinical data, hosted by Seoul National University Hospital.
-              Evaluated by AUROC and AUPRC metrics.
+              Predicted melanoma recurrence from whole-slide pathology images and clinical data,
+              hosted by Seoul National University Hospital.
             </div>
             <div class="tags">
               <span>Python</span>
               <span>PyTorch</span>
               <span>Medical Imaging</span>
-              <span>Computer Vision</span>
+              <span>Multiple Instance Learning</span>
             </div>
             <a class="more" href="https://github.com/Myungbin/SNUH-Pathology_Medical_Image_AI_Challenge" target="_blank">View on GitHub</a>
           </li>
@@ -255,7 +257,80 @@
             <a class="more" href="https://github.com/Myungbin/Synthetic-Data-Object-Detection" target="_blank">View on GitHub</a>
           </li>
 
+          <li class="card project-item reveal">
+            <span class="badge">Grand Prize</span>
+            <div class="title">Chung-Ang University Medical AI Hackathon 2025</div>
+            <div class="desc">
+              Lung disease prediction from chest X-rays with Learning with Limited Supervision, trained on public datasets
+              and evaluated on real-world hospital data. Received the Dean of College of Medicine Award.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Vision Transformer</span>
+              <span>Limited Supervision</span>
+            </div>
+          </li>
+
+          <li class="card project-item reveal">
+            <span class="badge">2nd Place</span>
+            <div class="title">ETRI FASHION-HOW Season 5</div>
+            <div class="desc">
+              Lightweight fashion image classification on the FASCODE dataset (14K images) under a 25M model-size limit:
+              emotion attributes (Sub-Task 1) and color (Sub-Task 2). Ranked 2nd in both sub-tasks.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>PyTorch</span>
+              <span>Vision Transformer</span>
+              <span>Lightweight Models</span>
+            </div>
+            <a class="more" href="https://github.com/Myungbin/FASHION-HOW-SEASON5" target="_blank">View on GitHub</a>
+          </li>
+
+          <li class="card project-item reveal">
+            <span class="badge">2nd Place</span>
+            <div class="title">Lettuce Growth Environment Generation</div>
+            <div class="desc">
+              Predicted daily lettuce leaf weight and generated optimal growth environments with CTGAN,
+              hosted by KIST Gangneung and Dacon.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>CTGAN</span>
+              <span>AutoGluon</span>
+              <span>CatBoost</span>
+            </div>
+            <a class="more" href="https://github.com/Myungbin/Lettuce-Growth-Environment-Prediction" target="_blank">View on GitHub</a>
+          </li>
+
+          <li class="card project-item reveal">
+            <span class="badge">3rd Place</span>
+            <div class="title">Jeju Road Traffic Prediction</div>
+            <div class="desc">
+              Predicted average vehicle speeds on Jeju roads from traffic and road data, with tourist-site features,
+              hosted by Jeju Special Self-Governing Province and Dacon.
+            </div>
+            <div class="tags">
+              <span>Python</span>
+              <span>XGBoost</span>
+              <span>LightGBM</span>
+              <span>CatBoost</span>
+              <span>Optuna</span>
+            </div>
+            <a class="more" href="https://github.com/Myungbin/Jeju-Traffic-Prediction" target="_blank">View on GitHub</a>
+          </li>
+
         </ul>
+        <div class="carousel-nav">
+          <button class="carousel-btn prev" type="button" aria-label="Previous project">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="carousel-btn next" type="button" aria-label="Next project">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        </div>
       </div>
     </section>
 
@@ -284,6 +359,29 @@
       };
       if (mq.addEventListener) mq.addEventListener('change', onSystemChange);
       else if (mq.addListener) mq.addListener(onSystemChange);
+    })();
+
+    // Project carousel: arrow buttons scroll one card; arrows hide when everything fits.
+    (function () {
+      var track = document.querySelector('.carousel-track');
+      var nav = document.querySelector('.carousel-nav');
+      var prev = nav.querySelector('.prev'), next = nav.querySelector('.next');
+      function step() {
+        var card = track.querySelector('li');
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+      }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth;
+        nav.hidden = max <= 1;
+        prev.disabled = track.scrollLeft <= 1;
+        next.disabled = track.scrollLeft >= max - 1;
+      }
+      prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
     })();
 
     // Gentle fade-up on scroll (Apple-style). Content stays visible if JS or the observer is unavailable.

@@ -452,11 +452,95 @@ h2 {
   margin-top: 4px;
 }
 
-/* Projects */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+/* Projects — sideways carousel */
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 22px;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  /* bleed into the container gutter so cards slide to the edge,
+     with room above/below for the hover lift and shadow */
+  margin: -12px -22px 0;
+  padding: 12px 22px 28px;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: -2px;
+  border-radius: 18px;
+}
+
+.carousel-track > li {
+  flex: 0 0 min(420px, 84%);
+  scroll-snap-align: start;
+}
+
+.carousel-nav {
+  display: none;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.js .carousel-nav { display: flex; }
+.js .carousel-nav[hidden] { display: none; }
+
+.carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(210, 210, 215, 0.64);
+  color: rgba(0, 0, 0, 0.56);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: rgba(223, 223, 227, 0.72);
+  color: rgba(0, 0, 0, 0.64);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.42;
+  cursor: default;
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+:root[data-theme="dark"] .carousel-btn {
+  background: rgba(66, 66, 69, 0.72);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+:root[data-theme="dark"] .carousel-btn:hover:not(:disabled) {
+  background: rgba(73, 73, 76, 0.84);
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .carousel-btn {
+    background: rgba(66, 66, 69, 0.72);
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .project-item {
@@ -586,7 +670,7 @@ footer p + p {
   .card { padding: 22px 22px; }
   .pub-item .title { font-size: 18px; }
 
-  .project-grid { grid-template-columns: 1fr; }
+  .carousel-track { gap: 14px; }
   .project-item { padding: 28px 24px 24px; }
 }
 
